@@ -16,13 +16,14 @@ public class PlayAudio extends Service{
     public void onCreate(){
         super.onCreate();
         Log.d(LOGCAT, "Service Started!");
-        objPlayer = MediaPlayer.create(this, R.raw.sleepaway);
+        objPlayer = MediaPlayer.create(this,R.raw.sleepaway);
     }
+
     public int onStartCommand(Intent intent, int flags, int startId){
         objPlayer.start();
-        Log.d(LOGCAT, "Media player Started!");
-        if (objPlayer.isLooping() != true){
-            Log.d(LOGCAT, "Problem in PLaying Audio");
+        Log.d(LOGCAT, "Media Player started!");
+        if(objPlayer.isLooping() != true){
+            Log.d(LOGCAT, "Problem in Playing Audio");
         }
         return 1;
     }
@@ -47,3 +48,4 @@ public class PlayAudio extends Service{
         return null;
     }
 }
+
